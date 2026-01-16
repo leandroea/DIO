@@ -12,4 +12,52 @@ A proposta da DIO é oferecer **formação prática e imersiva**, cocriada com g
 
 Os bootcamps e cursos da DIO são voltados para preparar profissionais para os desafios reais do mercado de tecnologia, com:
 - **Projetos práticos** aplicados a cenários reais.
-- **Desafios técnicos** que simulam ambientes
+- **Desafios técnicos** que simulam ambientes profissionais.
+- **Comunidade ativa** que conecta estudantes e empresas.
+- Mais de **10 mil pessoas contratadas** após participarem dos programas da plataforma.
+
+---
+
+## 📂 Estrutura do Repositório
+
+
+- Cada **curso** terá sua própria pasta.
+- Dentro de cada curso, estarão os **projetos realizados** e um README específico explicando o conteúdo daquele curso.
+
+---
+
+## 📈 Objetivo
+
+O objetivo deste repositório é:
+- Centralizar todos os cursos e projetos realizados na DIO.
+- Documentar minha evolução na área de tecnologia.
+- Facilitar a reprodução dos projetos por outros estudantes.
+- Servir como portfólio público no GitHub.
+
+---
+
+## 🛠️ Tecnologias Abordadas
+
+Os cursos da DIO abrangem diversas áreas da tecnologia, incluindo:
+- **Data & Cloud** (SQL, Power BI, Big Data, AWS, Azure, Google Cloud)
+- **Inteligência Artificial** e **Machine Learning**
+- Desenvolvimento **Back-end** (Java, .NET, Python, Golang, PHP, etc.)
+- Desenvolvimento **Front-end** (HTML, CSS, JavaScript, TypeScript, React, Angular)
+- **Mobile** (Kotlin, Swift, Flutter)
+- **Games** e outras áreas emergentes
+
+---
+
+## 📌 Próximos Passos
+
+- Adicionar os cursos já concluídos.
+- Documentar cada projeto com instruções de execução.
+- Atualizar este README conforme novos cursos forem adicionados.
+
+---
+
+## ✨ Autor
+
+Repositório mantido por **Leandro** como parte da jornada de aprendizado contínuo em tecnologia através da DIO.
+
+
