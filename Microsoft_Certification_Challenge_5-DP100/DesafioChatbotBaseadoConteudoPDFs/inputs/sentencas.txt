@@ -1,0 +1,5 @@
+Este é um exemplo de documento para testar o chatbot.
+Inteligência artificial pode ajudar na revisão de artigos científicos.
+A busca vetorial facilita localizar conceitos similares em múltiplos PDFs.
+Embeddings transformam texto em vetores numéricos para indexação.
+Este projeto demonstra como usar IA para responder perguntas com base em documentos.
