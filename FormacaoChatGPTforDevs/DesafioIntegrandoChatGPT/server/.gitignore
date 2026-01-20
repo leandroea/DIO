@@ -1,0 +1,10 @@
+# Ignorar arquivos de log
+*.log
+
+# Ignorar pastas de dependências
+node_modules/
+venv/
+
+# Ignorar arquivos de configuração local
+.env
+config.local.json
