@@ -70,36 +70,11 @@ npm start
 
 ---
 
-## 📡 API / Uso
-
-- Endpoint: `POST /api/prompt`
-- Body (JSON):
-
-```json
-{ "prompt": "Escreva uma breve apresentação sobre React" }
-```
-
-- Response (sucesso):
-
-```json
-{ "success": true, "data": "<texto gerado pelo modelo>" }
-```
-
-- Exemplo via curl:
-
-```bash
-curl -X POST http://localhost:5555/api/prompt \
-  -H "Content-Type: application/json" \
-  -d '{"prompt":"Olá, como você está?"}'
-```
-
----
-
 ## ⚠️ Problemas comuns
 
 - 401/Chave inválida: verifique `OPEN_AI_KEY` no `.env` do backend
 - CORS: se frontend e backend estiverem em domínios/portas diferentes, ajuste permissões CORS no `server/src/app.js`
-- Porta mismatch: verifique `URL_API` em `web/src/api/api.js`
+- Erro de Porta: verifique `URL_API` em `web/src/api/api.js`
 
 ---
 
