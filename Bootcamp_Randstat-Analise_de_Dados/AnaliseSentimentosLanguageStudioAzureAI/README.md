@@ -25,19 +25,3 @@ Neste desafio, desenvolvi um fluxo prático para analisar fala e texto utilizand
 - Documentar decisões e parâmetros (ex.: modelos usados, tratamentos aplicados) facilita a comparação entre experimentos;
 - Pequenas melhorias no pipeline (normalização de texto, remoção de fillers) já trazem ganhos notáveis na análise.
 
-## 📁 Organização do repositório (o que está neste projeto)
-
-- `EntendendoDesafio.md` — descrição do desafio e objetivos;
-- Notebooks e/ou `scripts/` — experimentos e análises (se houver);
-- `docs/` ou `anotacoes/` — anotações, screenshots e decisões relevantes;
-- `insights.md` — resumo das principais conclusões (opcional).
-
-## 🔭 Próximos passos sugeridos
-
-- Automatizar etapas do pipeline e registrar métricas de avaliação;
-- Testar modelos customizados ou estratégias de pós-processamento para melhorar a precisão;
-- Preparar um breve relatório com exemplos de antes/depois das transcrições para evidenciar ganhos.
-
----
-
-Se quiser, eu posso adaptar esse `README.md` para usar a linguagem no primeiro ou terceiro pessoa, ou incluir um resumo mais técnico dos passos que você executou. Deseja que eu faça alguma alteração? ✨
