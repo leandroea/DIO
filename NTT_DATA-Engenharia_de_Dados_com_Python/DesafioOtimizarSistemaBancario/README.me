@@ -1,0 +1,32 @@
+# 🏦 Sistema Bancário em Python
+
+## 📌 Descrição
+Este projeto implementa um **sistema bancário simples** em Python, com suporte a operações de depósito, saque e extrato, além da criação e gerenciamento de **usuários** e **contas bancárias**.  
+O objetivo é demonstrar boas práticas de programação, como **uso de funções**, **separação de responsabilidades** e **estruturação de dados**.
+
+---
+
+## 🚀 Funcionalidades
+- **Depositar**: adiciona valores ao saldo e registra no extrato.
+- **Sacar**: permite retirar valores do saldo, respeitando limites de saque e quantidade máxima de saques.
+- **Extrato**: exibe todas as movimentações realizadas e o saldo atual.
+- **Criar Usuário**: cadastra novos usuários com nome, data de nascimento, CPF e endereço.
+- **Filtrar Usuário**: busca usuários pelo CPF para evitar duplicidade.
+- **Criar Conta**: cria contas vinculadas a usuários existentes. Cada conta possui número sequencial e agência fixa.
+- **Listar Contas**: exibe todas as contas cadastradas ou informa que não há contas abertas.
+- **Sair**: encerra o programa.
+
+---
+
+## 🛠️ Estrutura do Código
+- `depositar(saldo, valor, extrato)` → argumentos **posicionais**; retorna saldo e extrato.
+- `sacar(*, saldo, valor, extrato, limite, numero_saques, limite_saques)` → argumentos **nomeados**; retorna saldo e extrato.
+- `exibir_extrato(saldo, *, extrato)` → recebe saldo por posição e extrato por nome.
+- `criar_usuario(usuarios)` → adiciona novo usuário à lista, garantindo CPF único.
+- `filtrar_usuario(cpf, usuarios)` → retorna usuário correspondente ao CPF.
+- `criar_conta(agencia, numero_conta, usuarios, contas)` → cria nova conta vinculada a um usuário existente.
+- `listar_contas(contas)` → lista contas ou informa que não há contas abertas.
+- `main()` → função principal que executa o loop do menu.
+
+---
+
