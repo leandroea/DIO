@@ -130,3 +130,31 @@ A pasta `prompt` contém os artefatos principais para uso e testes:
 
 ---
 
+## ⚙️ Como Executar
+1. Faça o deploy das funções **Lambda** no AWS.  
+2. Configure a **State Machine** no **AWS Step Functions** utilizando o arquivo `delivery-assistant.json`.  
+3. Ajuste os ARNs das funções Lambda e do modelo Bedrock conforme sua conta AWS.  
+4. Inicie uma execução da máquina de estados para simular um pedido de delivery.  
+
+---
+
+## 📊 Fluxo de Trabalho (Resumo)
+- Cliente realiza pedido → **ReceberPedido**  
+- Pedido validado → **ValidarPedido**  
+- Pagamento processado → **ProcessarPagamento**  
+- Experiência personalizada → **PersonalizarExperiencia (Bedrock)**  
+- Status atualizado → **AtualizarStatus**  
+- Pedido entregue → **EntregaFinal**  
+
+---
+
+## 🎯 Objetivo
+Garantir um fluxo de delivery automatizado, escalável e inteligente, utilizando o poder da **orquestração serverless** com Step Functions e a **IA generativa** do Amazon Bedrock.
+
+---
+
+## 📖 Referências
+- [AWS Step Functions](https://docs.aws.amazon.com/step-functions/)  
+- [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/)  
+- [Anthropic Claude 3 no Bedrock](https://aws.amazon.com/bedrock/claude/)  
+

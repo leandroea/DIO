@@ -1,0 +1,57 @@
+{
+  "Comment": "Assistente de Delivery com AWS Step Functions e Amazon Bedrock",
+  "StartAt": "ReceberPedido",
+  "States": {
+    "ReceberPedido": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "ReceberPedidoLambda"
+      },
+      "Next": "ValidarPedido"
+    },
+    "ValidarPedido": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "ValidarPedidoLambda"
+      },
+      "Next": "ProcessarPagamento"
+    },
+    "ProcessarPagamento": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "ProcessarPagamentoLambda"
+      },
+      "Next": "PersonalizarExperiencia"
+    },
+    "PersonalizarExperiencia": {
+      "Type": "Task",
+      "Resource": "arn:aws:bedrock:invokeModel",
+      "Parameters": {
+        "ModelId": "anthropic.claude-3-sonnet",
+        "Input": {
+          "prompt": "Personalize a experiência do cliente com base no histórico de pedidos e preferências."
+        }
+      },
+      "Next": "AtualizarStatus"
+    },
+    "AtualizarStatus": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "AtualizarStatusLambda"
+      },
+      "Next": "EntregaFinal"
+    },
+    "EntregaFinal": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "EntregaFinalLambda"
+      },
+      "End": true
+    }
+  }
+}
