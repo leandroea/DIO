@@ -1,4 +1,3 @@
-```markdown
 # Projeto Phishing Facebook - DIO Bootcamp
 
 Este projeto demonstra a criação de uma página falsa do Facebook utilizando o Social-Engineer Toolkit (SET) na distribuição Kali Linux, com o objetivo de capturar credenciais de login.
@@ -76,7 +75,7 @@ Com este projeto, aprendi:
 - Técnicas de engenharia social
 - Como identificar páginas de phishing
 - A importância da verificação de URLs antes de inserir credenciais
-```
+
 
 ---
 

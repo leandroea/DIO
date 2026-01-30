@@ -54,6 +54,7 @@ medusa -h 192.168.56.102 -u admin -P wordlist.txt -M web-form -m FORM:"/dvwa/log
 Exemplo de comando:
 ```bash
 medusa -h 192.168.56.101 -U users.txt -P wordlist.txt -M smbnt
+```
 
 #### 📌 Wordlists
 

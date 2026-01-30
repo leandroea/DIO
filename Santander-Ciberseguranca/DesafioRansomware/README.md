@@ -48,5 +48,6 @@ Hello World
 Instalação da biblioteca:
 ```bash
 pip install pyaes
+```
 
 
