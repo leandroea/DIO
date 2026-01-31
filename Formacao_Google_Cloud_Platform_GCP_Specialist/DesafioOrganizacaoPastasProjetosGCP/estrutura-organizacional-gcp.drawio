@@ -1,0 +1,102 @@
+<mxfile host="app.diagrams.net" modified="2025-01-31T00:00:00.000Z" agent="Cursor" version="22.0.0" etag="gcp-org" type="device">
+  <diagram name="Estrutura Organizacional GCP" id="gcp-org-diagram">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Título -->
+        <mxCell id="title" value="Estrutura Organizacional e Grupos de Acesso - Google Cloud Platform" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="280" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <!-- Organization (Raiz) -->
+        <mxCell id="org" value="Organization&#xa;(Raiz da Empresa)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="80" width="280" height="60" as="geometry" />
+        </mxCell>
+        <!-- Setas para Folders -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="org" target="folder1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="org" target="folder2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="org" target="folder3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Folder 1 - Desenvolvimento -->
+        <mxCell id="folder1" value="Folder: Desenvolvimento" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="200" height="50" as="geometry" />
+        </mxCell>
+        <!-- Folder 2 - Produção -->
+        <mxCell id="folder2" value="Folder: Produção" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="460" y="200" width="240" height="50" as="geometry" />
+        </mxCell>
+        <!-- Folder 3 - TI/Infra -->
+        <mxCell id="folder3" value="Folder: TI / Infraestrutura" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="800" y="200" width="200" height="50" as="geometry" />
+        </mxCell>
+        <!-- Projetos sob Desenvolvimento -->
+        <mxCell id="proj1a" value="Projeto: app-dev" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="proj1b" value="Projeto: api-dev" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="220" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="folder1" target="proj1a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="folder1" target="proj1b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Projetos sob Produção -->
+        <mxCell id="proj2a" value="Projeto: app-prod" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="proj2b" value="Projeto: data-prod" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="folder2" target="proj2a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="folder2" target="proj2b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Projetos sob TI -->
+        <mxCell id="proj3a" value="Projeto: networking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="proj3b" value="Projeto: security" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="300" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="folder3" target="proj3a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="folder3" target="proj3b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Separador / Título Grupos de Acesso -->
+        <mxCell id="grupos-title" value="Grupos de Acesso (IAM)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="420" y="400" width="320" height="25" as="geometry" />
+        </mxCell>
+        <!-- Grupo Admins -->
+        <mxCell id="group-admin" value="Grupo: gcp-admins@empresa.com&#xa;Roles: Owner, Org Admin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="120" y="450" width="260" height="50" as="geometry" />
+        </mxCell>
+        <!-- Grupo Devs -->
+        <mxCell id="group-dev" value="Grupo: gcp-developers@empresa.com&#xa;Roles: Editor (Dev), Viewer (Prod)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="440" y="450" width="280" height="50" as="geometry" />
+        </mxCell>
+        <!-- Grupo Viewers -->
+        <mxCell id="group-viewer" value="Grupo: gcp-viewers@empresa.com&#xa;Roles: Viewer (somente leitura)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="780" y="450" width="260" height="50" as="geometry" />
+        </mxCell>
+        <!-- Legenda -->
+        <mxCell id="legenda-box" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="120" y="560" width="920" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="legenda-text" value="Legenda: Organization = nível mais alto (domínio); Folders = agrupamento por departamento/ambiente; Projects = recursos (billing, APIs, recursos); Grupos IAM = quem acessa o quê (Owner=total, Editor=alterar, Viewer=ler). Políticas podem ser herdadas da Organization para Folders e Projects." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="135" y="565" width="890" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
