@@ -1,0 +1,48 @@
+# Configuração do Google App Engine - Desafio GCP
+# Customização de tipos de instância e autoscaling
+
+runtime: python312
+
+# ============================================
+# TIPO DE INSTÂNCIA (instance_class)
+# ============================================
+# Opções para automatic scaling: F1 (padrão), F2, F4, F4_1G
+# F1: 256MB RAM, 600 MHz  - mais econômico
+# F2: 512MB RAM, 1.2 GHz  - balanceado
+# F4: 1GB RAM, 2.4 GHz    - maior capacidade
+# F4_1G: 1GB RAM          - variante com mais memória
+instance_class: F2
+
+# ============================================
+# AUTOSCALING
+# ============================================
+automatic_scaling:
+  # Número mínimo de instâncias (0 = escala a zero quando sem tráfego)
+  min_instances: 0
+  # Número máximo de instâncias (limite de custo e capacidade)
+  max_instances: 10
+  # CPU alvo para disparar nova instância (0.5 a 0.95, padrão 0.6)
+  target_cpu_utilization: 0.65
+  # Utilização de throughput para escalar (0.5 a 0.95)
+  target_throughput_utilization: 0.65
+  # Requisições concorrentes por instância (padrão 10, máx 1000)
+  # F2+ permite aumentar para melhor uso de CPU
+  max_concurrent_requests: 50
+  # Latência mínima na fila antes de considerar nova instância
+  min_pending_latency: 30ms
+  # Latência máxima na fila (automatic = até 10s)
+  max_pending_latency: automatic
+  # Instâncias ociosas mínimas adicionais (custo vs. resposta)
+  min_idle_instances: automatic
+  # Instâncias ociosas máximas a manter
+  max_idle_instances: automatic
+
+# Handlers: roteamento de URLs para a aplicação
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+
+# Habilitar warmup para min_instances/min_idle_instances
+inbound_services:
+  - warmup
