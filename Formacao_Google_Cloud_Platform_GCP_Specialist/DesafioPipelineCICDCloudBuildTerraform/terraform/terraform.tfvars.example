@@ -1,0 +1,7 @@
+# Copie para terraform.tfvars e preencha com seus valores
+# Nunca commite terraform.tfvars com dados sensíveis em repositórios públicos
+
+project_id         = "seu-projeto-gcp"
+region             = "southamerica-east1"
+environment        = "dev"
+bucket_name_prefix = "iac-pipeline"

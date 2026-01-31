@@ -1,0 +1,64 @@
+# Pipeline CI/CD - Cloud Build + Terraform
+# Provisionamento de Infraestrutura como Código (IaC)
+#
+# Gatilhos sugeridos: push na branch main ou manual
+
+steps:
+  # 1. Validação e formatação do código Terraform
+  - id: 'terraform-validate'
+    name: 'hashicorp/terraform:1.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd terraform
+        terraform init -backend=false
+        terraform fmt -check -recursive
+        terraform validate
+    waitFor: ['-']
+
+  # 2. Planejamento (plan) - gera o plano de execução
+  - id: 'terraform-plan'
+    name: 'hashicorp/terraform:1.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd terraform
+        terraform init
+        terraform plan -var="project_id=$PROJECT_ID" -var="environment=${_ENVIRONMENT}" -out=tfplan -no-color
+    waitFor: ['terraform-validate']
+
+  # 3. Aplicação (apply) - provisiona a infraestrutura usando o plano aprovado
+  - id: 'terraform-apply'
+    name: 'hashicorp/terraform:1.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd terraform
+        terraform init
+        terraform apply -auto-approve -no-color tfplan
+    waitFor: ['terraform-plan']
+
+  # 4. Exibe os outputs da infraestrutura criada
+  - id: 'terraform-output'
+    name: 'hashicorp/terraform:1.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd terraform
+        terraform output -json
+    waitFor: ['terraform-apply']
+
+# Variáveis de substituição (substitution variables)
+# _ENVIRONMENT pode ser definido no gatilho ou substituído na execução
+substitutions:
+  _ENVIRONMENT: 'dev'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+# Persiste o workspace entre steps para compartilhar tfplan e .terraform
+timeout: '1200s'
