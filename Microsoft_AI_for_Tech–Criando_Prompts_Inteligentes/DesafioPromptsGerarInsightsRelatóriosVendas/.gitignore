@@ -1,0 +1,18 @@
+# Sistema e editores
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Excel temporários
+~$*.xlsx
+~$*.xls
+
+# Ambiente e secrets
+.env
+.env.local
+*.key
+
+# Logs
+*.log
