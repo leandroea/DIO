@@ -1,0 +1,89 @@
+# serverless.yml
+service: desafio-serverless-api
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+  environment:
+    STAGE: ${self:provider.stage}
+  
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-${self:provider.stage}-users
+
+functions:
+  createUser:
+    handler: handler.createUser
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+    environment:
+      USERS_TABLE: ${self:service}-${self:provider.stage}-users
+
+  getUser:
+    handler: handler.getUser
+    events:
+      - http:
+          path: users/{id}
+          method: get
+          cors: true
+    environment:
+      USERS_TABLE: ${self:service}-${self:provider.stage}-users
+
+  updateUser:
+    handler: handler.updateUser
+    events:
+      - http:
+          path: users/{id}
+          method: put
+          cors: true
+    environment:
+      USERS_TABLE: ${self:service}-${self:provider.stage}-users
+
+  deleteUser:
+    handler: handler.deleteUser
+    events:
+      - http:
+          path: users/{id}
+          method: delete
+          cors: true
+    environment:
+      USERS_TABLE: ${self:service}-${self:provider.stage}-users
+
+  listUsers:
+    handler: handler.listUsers
+    events:
+      - http:
+          path: users
+          method: get
+          cors: true
+    environment:
+      USERS_TABLE: ${self:service}-${self:provider.stage}-users
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${self:provider.stage}-users
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST

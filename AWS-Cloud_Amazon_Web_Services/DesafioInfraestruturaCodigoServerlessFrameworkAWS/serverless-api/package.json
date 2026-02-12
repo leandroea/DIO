@@ -1,0 +1,29 @@
+{
+  "name": "desafio-serverless-api",
+  "version": "1.0.0",
+  "description": "Serverless REST API with CRUD operations using AWS Lambda and DynamoDB",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove",
+    "offline": "serverless offline start"
+  },
+  "keywords": [
+    "serverless",
+    "aws",
+    "lambda",
+    "dynamodb",
+    "api",
+    "rest"
+  ],
+  "author": "Leandro",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1490.0"
+  },
+  "devDependencies": {
+    "serverless": "^4.31.2",
+    "serverless-offline": "^12.0.4"
+  }
+}
