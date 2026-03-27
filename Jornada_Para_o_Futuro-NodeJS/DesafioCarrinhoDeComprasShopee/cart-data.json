@@ -3,18 +3,18 @@
     {
       "name": "HotWheels Ferrari",
       "price": 20.99,
-      "quantity": 2
+      "quantity": 4
     },
     {
       "name": "HotWheels Lamborghini",
       "price": 39.99,
-      "quantity": 1
+      "quantity": 2
     },
     {
       "name": "HotWheels Porsche",
       "price": 15.5,
-      "quantity": 1
+      "quantity": 2
     }
   ],
-  "savedAt": "2026-03-27T17:40:37.601Z"
+  "savedAt": "2026-03-27T18:43:30.583Z"
 }
