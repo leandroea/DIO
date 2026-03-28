@@ -1,81 +1,123 @@
-<div align="center">
+# 🏎️ Minimal API Formula 1
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+Uma Minimal API desenvolvido em Node.js com Fastify para gerenciar times e pilotos de Fórmula 1.
 
-</div>
+## 🚀 Tecnologias
 
-<br />
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
+### Dependências de Produção
 
-</div>
+- **Fastify** - Framework web rápido e de baixo overhead
+- **@fastify/cors** - Plugin Fastify para habilitar CORS
 
-# 🚀 Technologies
+### Dependências de Desenvolvimento
 
-This code source was developed with the following items:
+- **TypeScript** - Superset JavaScript com tipagem estática
+- **tsx** - Permite executar TypeScript diretamente no Node.js
+- **tsup** - Empacotador TypeScript sem configuração (powered by esbuild)
+- **@types/node** - Definições de tipos para Node.js
 
-### 📦 Dependencies
+## 📄 Arquivos de Configuração
 
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
+- `.gitignore` - Ignora pastas como node_modules
+- `.env` - Variáveis de ambiente (configuração da porta do servidor)
+- `tsconfig.json` - Opções de configuração do compilador TypeScript
 
-### 📄 Files
+## ⚡ Scripts Disponíveis
 
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
+| Script | Descrição |
+|--------|-----------|
+| `npm run dist` | Compila arquivos TypeScript para JavaScript no diretório dist |
+| `npm run start:dev` | Executa o servidor em modo desenvolvimento com variáveis do .env |
+| `npm run start:watch` | Executa o servidor em modo desenvolvimento com reload automático |
+| `npm run start:dist` | Compila o projeto e executa a versão compilada do diretório dist |
 
-### ⚡ Scripts
+## 📋 Endpoints da API
 
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
+A API executa na porta **3333** por padrão (configurável no arquivo `.env`).
 
-# 👨‍💻 How To Use
+### Times
 
-click in **[Use this template]** OR
+- **`GET /teams`** - Retorna todos os times de Fórmula 1
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+**Resposta:**
+```json
+{
+  "teams": [
+    { "id": 1, "name": "McLaren", "base": "Woking, United Kingdom" },
+    { "id": 2, "name": "Mercedes", "base": "Brackley, United Kingdom" },
+    ...
+  ]
+}
 ```
 
-## Author
+### Pilotos
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+- **`GET /drivers`** - Retorna todos os pilotos
 
-# Credits
+**Resposta:**
+```json
+{
+  "drivers": [
+    { "id": 1, "name": "Max Verstappen", "team": "Red Bull Racing" },
+    { "id": 2, "name": "Lewis Hamilton", "team": "Ferrari" },
+    { "id": 3, "name": "Lando Norris", "team": "McLaren" }
+  ]
+}
+```
 
-icons by [Pino Lamanna][dribble-icon]
+- **`GET /drivers/:id`** - Retorna um piloto específico pelo ID
 
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+**Parâmetros:**
+- `id` - ID do piloto (número)
+
+**Resposta (200):**
+```json
+{
+  "driver": { "id": 1, "name": "Max Verstappen", "team": "Red Bull Racing" }
+}
+```
+
+**Resposta (404):**
+```json
+{
+  "message": "Driver Not Found"
+}
+```
+
+## 👨‍💻 Como Usar
+
+Para clonar e executar este projeto, você precisará ter instalado:
+- [Git](https://git-scm.com)
+- [Node.js v20+](https://nodejs.org/en/)
+- [NPM v10+](https://nodejs.org/en/)
+
+A partir da linha de comando:
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
+
+# Entre no diretório do projeto
+$ cd DesafioCriandoMinimalAPIFormula1
+
+# Instale as dependências
+$ npm install
+
+# Execute o servidor em modo desenvolvimento
+$ npm run start:dev
+```
+
+O servidor estará disponível em: `http://localhost:3333`
+
+## 🎯 Estrutura do Projeto
+
+```
+├── src/
+│   └── server.ts       # Código principal da API
+├── .env                # Variáveis de ambiente
+├── .gitignore          # Arquivos ignorados pelo Git
+├── package.json        # Dependências e scripts
+├── tsconfig.json       # Configuração do TypeScript
+└── README.md           # Documentação do projeto
