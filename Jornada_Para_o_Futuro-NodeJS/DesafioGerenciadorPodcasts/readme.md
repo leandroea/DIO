@@ -122,10 +122,3 @@ Resposta:
 3. Inicie o servidor executando `npm run start:dev`.
 4. Acesse os endpoints fornecidos para listar os episódios de podcasts ou filtrá-los por nome de podcast.
 
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou enviar solicitações de recebimento (pull requests) para melhorar este projeto.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
