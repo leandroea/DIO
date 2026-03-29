@@ -2,7 +2,6 @@
 
 > Um agente inteligente alimentado por IA, construído com o Google Agent Development Kit (ADK), que se integra ao Trello para organização automatizada de tarefas diárias.
 
-[![Licença: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python: 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Modelo: Gemini 2.5 Flash](https://img.shields.io/badge/Model-Gemini%202.5%20Flash-green.svg)](https://ai.google.dev/)
 
@@ -260,24 +259,3 @@ resultado = mudar_status_tarefa(
 
 ---
 
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-## Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
-
----
-
-## Agradecimentos
-
-- **Google Agent Development Kit** - Por fornecer o framework de agentes
-- **Trello** - Pela API de gerenciamento de tarefas
-- **Gemini** - Pelo modelo de linguagem de IA
-
----
-
-*Construído com ❤️ usando Google ADK e API do Trello*
